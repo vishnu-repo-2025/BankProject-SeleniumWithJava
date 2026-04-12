@@ -1,3 +1,8 @@
 test-output/
 reports/
 *.html
+.settings/
+logs/
+target/
+.classpath
+.project
