@@ -29,38 +29,46 @@ public class BaseClass {
 		FileReader file = new FileReader(".//src//test//resources//config.properties");
 		pro.load(file);
 	//Choosing browser
-/*		switch(br.toLowerCase()){
-		case "chrome" : driver = new ChromeDriver();break;
-		case "edge" : driver = new EdgeDriver();break;
-		case "firefox" : driver = new FirefoxDriver();break;
-		default : System.out.println("Invalid browser selection..."); return;
+		switch(br.toLowerCase()){
+		case "chrome" : 
+			driver = new ChromeDriver();
+			break;
+		case "edge" : 
+			driver = new EdgeDriver();
+			break;
+		case "firefox" : 
+			driver = new FirefoxDriver();
+			break;
+		default : 
+			System.out.println("Invalid browser selection..."); 
+			return;
 		}
-*/
+
 		// Choosing browser to work with jenkins
-        switch (br.toLowerCase()) {
-
-            case "chrome":
-                ChromeOptions coptions = new ChromeOptions();
-                coptions.addArguments("--headless=new");
-                coptions.addArguments("--no-sandbox");
-                coptions.addArguments("--disable-dev-shm-usage");
-                driver = new ChromeDriver(coptions);
-                break;
-
-            case "edge":
-                driver = new EdgeDriver(); // you can add headless later if needed
-                break;
-
-            case "firefox":
-                FirefoxOptions foptions = new FirefoxOptions();
-                foptions.addArguments("--headless");
-                driver = new FirefoxDriver(foptions);
-                break;
-
-            default:
-                System.out.println("Invalid browser selection...");
-                return;
-        }
+//        switch (br.toLowerCase()) {
+//
+//            case "chrome":
+//                ChromeOptions coptions = new ChromeOptions();
+//                coptions.addArguments("--headless=new");
+//                coptions.addArguments("--no-sandbox");
+//                coptions.addArguments("--disable-dev-shm-usage");
+//                driver = new ChromeDriver(coptions);
+//                break;
+//
+//            case "edge":
+//                driver = new EdgeDriver(); // you can add headless later if needed
+//                break;
+//
+//            case "firefox":
+//                FirefoxOptions foptions = new FirefoxOptions();
+//                foptions.addArguments("--headless");
+//                driver = new FirefoxDriver(foptions);
+//                break;
+//
+//            default:
+//                System.out.println("Invalid browser selection...");
+//                return;
+//        }
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(pro.getProperty("url"));
 		driver.manage().window().maximize();
