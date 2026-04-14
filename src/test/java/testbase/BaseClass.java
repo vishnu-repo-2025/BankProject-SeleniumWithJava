@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeClass;
@@ -56,7 +57,9 @@ public class BaseClass {
                 break;
 
             case "edge":
-                driver = new EdgeDriver(); // you can add headless later if needed
+                EdgeOptions edoptions = new EdgeOptions();
+                edoptions.addArguments("--headless");
+                driver = new EdgeDriver();
                 break;
 
             case "firefox":
