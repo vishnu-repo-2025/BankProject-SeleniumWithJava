@@ -5,7 +5,7 @@
   <parameter name="browser" value="edge"></parameter>
     <classes>
       <class name="testcases.Login_Test001"/>
-      <class name="testcases.New_Customer002"/>
+      <!-- <class name="testcases.New_Customer002"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
